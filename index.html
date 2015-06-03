@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pong</title>
+    <link rel="stylesheet" href="pong.css">
+  </head>
+  <body>
+    <header><h1>Pong</h1></header>
+
+    <div class="score">Score: <span id="score">0</span></div>
+    
+    <div id="playground">
+      <div id="start-message">
+        press any key to start
+        <br/>
+        move &#8592; &#8594;
+      </div>
+      <div id="game-over">
+        game over
+        <br/>
+        press F5 to play again
+      </div>
+      <div id="ball"></div>
+      <div id="racket"></div>
+    </div>
+
+    <script src="target/scala-2.11/pong-scalajs-fastopt.js"></script>
+    <script>
+      var playgroundHTML = document.getElementById('playground'),
+          racketHTML     = document.getElementById('racket'),
+          ballHTML       = document.getElementById('ball'),
+          scoreHTML      = document.getElementById('score'),
+          startHTML      = document.getElementById('start-message'),
+          gameOverHTML   = document.getElementById('game-over');
+      pong.game().load(playgroundHTML, racketHTML, ballHTML, scoreHTML, startHTML, gameOverHTML);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+scalaJSStage in Global := FastOptStage
